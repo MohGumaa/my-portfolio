@@ -1,0 +1,25 @@
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.7;
+
+// Menu Colours
+$text-color: #eee;
+$menu-bg: #333;
+$menu-hover: #444;
+$menu-border: #555;
+
+@mixin easeOut {
+    transition: all .5s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image{
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    }
+}

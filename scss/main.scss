@@ -1,0 +1,181 @@
+@import 'config';
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    @include background;
+    background: $primary-color;
+    color: $text-color;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $background-opacity);
+        z-index: -1;
+    }
+}
+
+h1,
+h2,
+h3{
+    margin: 0;
+    font-weight: 400;
+
+    &.lg-heading{
+        font-size: 6rem;
+    }
+
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a {
+    color: $text-color;
+    text-decoration:none;  
+}
+
+.text-secondary{
+    color: $secondary-color;
+}
+
+/* Navigation Bar */
+
+nav {
+  //top: 0; // Fix the menu to the top
+  //position: fixed; // Fix the menu to the top
+  // height: 40px;
+  width: 100%;
+  background-color: rgba($menu-bg, 0.9);
+  color: $text-color;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1);
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    float: left;
+  }
+
+  a {
+  	display: block;
+	  text-align: center;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  // li:hover {
+  //   background-color: $menu-hover;
+  // }
+  
+  a:hover {
+    color: $secondary-color;
+    @include easeOut();
+  }
+
+  a#openup {
+	  display: none;
+  }
+} //nav
+
+#home {
+    padding: 4rem;
+    height: 100%;
+    overflow: hidden;
+    
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easeOut(); 
+            }
+        }
+    }
+
+    h1 {
+        margin-top: 20vh;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+  h1 {
+	  font-size: 2.8em;
+  }
+
+  nav {
+		height: auto;
+		border-bottom: 0;
+	
+	  ul {
+		  display: none;
+		  height: auto;
+	  }	
+	
+	  li {
+		  width: 100%;
+		  float: left;
+		  position: relative;
+    }
+
+  	a {
+	  	text-align: left;
+	  	width: 100%;
+	  	text-indent: 25px;
+		background: $menu-bg;	 
+        border-bottom: 1px solid $menu-border;
+  	}  	
+	
+  	 a:hover {
+	  	background: $menu-hover;
+  	}
+
+	  a#openup:after {
+
+		  content:"|||";
+          transform:rotate(-90deg);
+          -ms-transform:rotate(-90deg); /* IE 9 */
+          -webkit-transform:rotate(-90deg); /* Safari and Chrome */
+		  width: 30px;
+		  height: 30px;
+		  display: inline-block;
+		  position: absolute;
+		  right: 5px;
+		  top: 20px;
+	  }
+  	  		
+	  a#openup {
+		  display: block;
+		  background-color: $menu-bg;
+		  width: 100%;
+		  position: relative;
+	  }
+  } //nav
+} // media
+
+.cf:before, .cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
