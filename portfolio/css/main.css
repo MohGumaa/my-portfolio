@@ -1,26 +1,70 @@
+@media screen and (max-width: 768px) {
+  #home {
+    align-items: center;
+    text-align: center; }
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; }
+  #about .container {
+    max-width: 80%;
+    padding: 0.5rem; }
+    #about .container h1 {
+      font-size: 1.8rem;
+      margin-top: 5vh; }
+    #about .container .about-info {
+      grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 480px) {
+  #home h1 {
+    font-size: 4rem;
+    margin-top: 10vh; }
+  #showcase nav {
+    height: auto;
+    border-bottom: 0; }
+    #showcase nav ul {
+      display: none;
+      height: auto; }
+    #showcase nav li {
+      width: 100%;
+      float: left;
+      position: relative; }
+    #showcase nav a {
+      text-align: left;
+      width: 100%;
+      text-indent: 25px;
+      background: #333;
+      border-bottom: 1px solid #555; }
+    #showcase nav a:hover {
+      background: #444; }
+    #showcase nav a#openup:after {
+      content: "|||";
+      transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-90deg);
+      /* Safari and Chrome */
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      top: 20px; }
+    #showcase nav a#openup {
+      display: block;
+      background-color: #333;
+      width: 100%;
+      position: relative; } }
+
 * {
   box-sizing: border-box; }
 
 body {
   background: #444;
-  color: #eee;
+  color: #fff;
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
-  body#bg-img {
-    background: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: cover; }
-  body:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(68, 68, 68, 0.7);
-    z-index: -1; }
 
 h1,
 h2,
@@ -45,69 +89,140 @@ a {
 .text-secondary {
   color: #eece1a; }
 
-/* Navigation Bar */
-nav {
-  width: 100%;
-  background-color: rgba(51, 51, 51, 0.9);
-  color: #eee;
-  position: fixed;
-  top: 0;
-  overflow: hidden;
-  box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1); }
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0; }
-  nav li {
-    float: left; }
-  nav a {
-    display: block;
-    text-align: center;
-    padding: 10px 14px;
-    text-transform: uppercase;
-    font-size: 0.8rem; }
-  nav a:hover {
-    color: #eece1a;
-    transition: all .5s ease-out; }
-  nav a#openup {
-    display: none; }
+main {
+  /* Navigation Bar */ }
+  main#showcase {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    z-index: 1; }
+    main#showcase:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(68, 68, 68, 0.7); }
+  main nav {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    top: 0;
+    overflow: hidden;
+    box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1); }
+    main nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+    main nav li {
+      float: left; }
+    main nav a {
+      display: inline-block;
+      outline: none;
+      text-align: center;
+      padding: 1rem 0.8rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 400;
+      transition: all 0.5s ease-out; }
+    main nav a:hover {
+      color: #eece1a; }
+    main nav a#openup {
+      display: none; }
+  main #home {
+    padding: 4rem;
+    height: 100vh;
+    overflow: hidden; }
+    main #home .icons {
+      margin-top: 1rem; }
+      main #home .icons a {
+        padding: 0.4rem; }
+        main #home .icons a:hover {
+          color: #eece1a;
+          transition: all 0.5s ease-out; }
+    main #home h1 {
+      margin-top: 20vh; }
 
-#home {
-  padding: 4rem;
-  height: 100%;
-  overflow: hidden; }
-  #home .icons {
-    margin-top: 1rem; }
-    #home .icons a {
-      padding: 0.4rem; }
-      #home .icons a:hover {
-        color: #eece1a;
-        transition: all .5s ease-out; }
-  #home h1 {
-    margin-top: 20vh; }
+#about {
+  background-color: #fff;
+  color: #000;
+  /* Container */ }
+  #about .container {
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem 1rem; }
+    #about .container .lg-heading {
+      display: inline-block; }
+      #about .container .lg-heading :after {
+        content: '';
+        display: block;
+        border-top: 6px solid #DF292D; }
+    #about .container .about-info {
+      display: grid;
+      grid-gap: 6rem;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem; }
+      #about .container .about-info .bio-image {
+        width: 100%;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        border: none; }
+      #about .container .about-info .bio {
+        text-align: justify; }
+
+#main-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #2b2b2b;
+  color: #fff;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  #home {
+    align-items: center;
+    text-align: center; }
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; }
+  #about .container {
+    max-width: 80%;
+    padding: 0.5rem; }
+    #about .container h1 {
+      font-size: 1.8rem;
+      margin-top: 5vh; }
+    #about .container .about-info {
+      grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 2.8em; }
-  nav {
+  #home h1 {
+    font-size: 4rem;
+    margin-top: 10vh; }
+  #showcase nav {
     height: auto;
     border-bottom: 0; }
-    nav ul {
+    #showcase nav ul {
       display: none;
       height: auto; }
-    nav li {
+    #showcase nav li {
       width: 100%;
       float: left;
       position: relative; }
-    nav a {
+    #showcase nav a {
       text-align: left;
       width: 100%;
       text-indent: 25px;
       background: #333;
       border-bottom: 1px solid #555; }
-    nav a:hover {
+    #showcase nav a:hover {
       background: #444; }
-    nav a#openup:after {
+    #showcase nav a#openup:after {
       content: "|||";
       transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
@@ -120,7 +235,7 @@ nav {
       position: absolute;
       right: 5px;
       top: 20px; }
-    nav a#openup {
+    #showcase nav a#openup {
       display: block;
       background-color: #333;
       width: 100%;

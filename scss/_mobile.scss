@@ -1,0 +1,95 @@
+// DeskTops & Laptops
+@include mediaLg {
+
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+    #home {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .lg-heading{
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+    
+    #about {
+        .container{
+            max-width: 80%;
+            padding: 0.5rem;
+
+            h1{
+                font-size: 1.8rem;
+                margin-top: 5vh;
+            }
+
+            .about-info{
+                grid-template-columns: 1fr;
+            
+            }
+        }
+    }
+}
+
+// Smartphones
+@include mediaSm {
+    #home {
+      h1 {
+        font-size: 4rem;
+        margin-top: 10vh;
+      }
+    }
+  
+    #showcase {
+      
+    nav {
+          height: auto;
+          border-bottom: 0;
+      
+        ul {
+            display: none;
+            height: auto;
+        }	
+      
+        li {
+            width: 100%;
+            float: left;
+            position: relative;
+      }
+  
+        a {
+            text-align: left;
+            width: 100%;
+            text-indent: 25px;
+              background: $menu-bg;	 
+        border-bottom: 1px solid $menu-border;
+        }  	
+      
+         a:hover {
+            background: $menu-hover;
+        }
+  
+        a#openup:after {
+            content:"|||";
+        transform:rotate(-90deg);
+        -ms-transform:rotate(-90deg); /* IE 9 */
+        -webkit-transform:rotate(-90deg); /* Safari and Chrome */
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            position: absolute;
+            right: 5px;
+            top: 20px;
+        }
+                  
+        a#openup {
+            display: block;
+            background-color: $menu-bg;
+            width: 100%;
+            position: relative;
+        }
+    } 
+    }//nav
+  } // media
