@@ -1,68 +1,11 @@
-@media screen and (max-width: 768px) {
-  #home {
-    align-items: center;
-    text-align: center; }
-  .lg-heading {
-    line-height: 1;
-    margin-bottom: 1rem; }
-  #about .container {
-    max-width: 80%;
-    padding: 0.5rem; }
-    #about .container h1 {
-      font-size: 1.8rem;
-      margin-top: 5vh; }
-    #about .container .about-info {
-      grid-template-columns: 1fr; } }
-
-@media screen and (max-width: 480px) {
-  #home h1 {
-    font-size: 4rem;
-    margin-top: 10vh; }
-  #showcase nav {
-    height: auto;
-    border-bottom: 0; }
-    #showcase nav ul {
-      display: none;
-      height: auto; }
-    #showcase nav li {
-      width: 100%;
-      float: left;
-      position: relative; }
-    #showcase nav a {
-      text-align: left;
-      width: 100%;
-      text-indent: 25px;
-      background: #333;
-      border-bottom: 1px solid #555; }
-    #showcase nav a:hover {
-      background: #444; }
-    #showcase nav a#openup:after {
-      content: "|||";
-      transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      /* IE 9 */
-      -webkit-transform: rotate(-90deg);
-      /* Safari and Chrome */
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      position: absolute;
-      right: 5px;
-      top: 20px; }
-    #showcase nav a#openup {
-      display: block;
-      background-color: #333;
-      width: 100%;
-      position: relative; } }
-
 * {
   box-sizing: border-box; }
 
 body {
   background: #444;
   color: #fff;
-  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
 
@@ -112,7 +55,6 @@ main {
     position: fixed;
     width: 100%;
     background-color: rgba(51, 51, 51, 0.9);
-    top: 0;
     overflow: hidden;
     box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1); }
     main nav ul {
@@ -127,7 +69,7 @@ main {
       text-align: center;
       padding: 1rem 0.8rem;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 400;
       transition: all 0.5s ease-out; }
     main nav a:hover {
@@ -156,7 +98,8 @@ main {
     max-width: 70%;
     margin: auto;
     overflow: hidden;
-    padding: 2rem 1rem; }
+    padding: 2rem 1rem;
+    text-align: center; }
     #about .container .lg-heading {
       display: inline-block; }
       #about .container .lg-heading :after {
@@ -175,7 +118,42 @@ main {
         border-radius: 50%;
         border: none; }
       #about .container .about-info .bio {
+        margin-top: 2rem;
         text-align: justify; }
+        #about .container .about-info .bio p {
+          font-size: 1.5rem; }
+
+#work {
+  padding: 2rem; }
+  #work .projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 4rem; }
+    #work .projects img {
+      width: 100%;
+      border: 3px #fff solid; }
+      #work .projects img:hover {
+        opacity: 0.5;
+        border-color: #eece1a;
+        transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
 
 #main-footer {
   padding: 1rem;
@@ -184,6 +162,17 @@ main {
   color: #fff;
   height: 60px; }
 
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  zoom: 1; }
+
+/* For IE 6/7 (trigger hasLayout) */
 @media screen and (max-width: 768px) {
   #home {
     align-items: center;
@@ -201,9 +190,6 @@ main {
       grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 480px) {
-  #home h1 {
-    font-size: 4rem;
-    margin-top: 10vh; }
   #showcase nav {
     height: auto;
     border-bottom: 0; }
@@ -239,16 +225,9 @@ main {
       display: block;
       background-color: #333;
       width: 100%;
-      position: relative; } }
-
-.cf:before, .cf:after {
-  content: "";
-  display: table; }
-
-.cf:after {
-  clear: both; }
-
-.cf {
-  zoom: 1; }
-
-/* For IE 6/7 (trigger hasLayout) */
+      position: relative; }
+  #home h1 {
+    font-size: 4rem;
+    margin-top: 10vh; }
+  #work {
+    text-align: center; } }
