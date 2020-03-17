@@ -15,6 +15,15 @@ $menu-border: #555;
     transition: all 0.5s ease-out;
 }
 
+@mixin Container {
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
 @mixin background {
     @if $show-home-image {
         &#showcase {

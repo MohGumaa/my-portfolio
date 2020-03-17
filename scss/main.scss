@@ -1,22 +1,19 @@
 @import 'config';
-@import 'mobile';
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box;}
 
 body {
     background: $primary-color;
     color: set-text-color($primary-color);
-    height: 100%;
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
 }
 
 h1,
 h2,
-h3{
+h3 {
     margin: 0;
     font-weight: 400;
 
@@ -51,7 +48,6 @@ main {
     // height: 40px;
     width: 100%;
     background-color: rgba($menu-bg, 0.9);
-    top: 0;
     overflow: hidden;
     box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1);
     
@@ -70,8 +66,9 @@ main {
       outline: none;
       text-align: center;
       padding: 1rem 0.8rem;
+      
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 400;
       @include easeOut();
     }
@@ -120,11 +117,7 @@ main {
 
     /* Container */
   .container {
-    max-width: 70%;
-    margin: auto;
-    overflow: hidden;
-    padding: 2rem 1rem;
-    text-align: center;
+    @include Container;
     
     .lg-heading {
       display: inline-block;     
@@ -150,7 +143,12 @@ main {
         }
 
         .bio {
+          margin-top: 2rem;
           text-align: justify;
+
+          p {
+            font-size: 1.5rem;
+          }
         }
       }
   }    
@@ -214,9 +212,10 @@ main {
   height: 60px;
 }
 
-// Media
-@import 'mobile';
-
 .cf:before, .cf:after { content:""; display:table; }
 .cf:after { clear:both; }
 .cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
+
+// Media
+@import 'mobile';
+
