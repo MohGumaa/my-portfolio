@@ -53,7 +53,9 @@
       display: block;
       background-color: #333;
       width: 100%;
-      position: relative; } }
+      position: relative; }
+  #work {
+    text-align: center; } }
 
 * {
   box-sizing: border-box; }
@@ -156,7 +158,8 @@ main {
     max-width: 70%;
     margin: auto;
     overflow: hidden;
-    padding: 2rem 1rem; }
+    padding: 2rem 1rem;
+    text-align: center; }
     #about .container .lg-heading {
       display: inline-block; }
       #about .container .lg-heading :after {
@@ -176,6 +179,38 @@ main {
         border: none; }
       #about .container .about-info .bio {
         text-align: justify; }
+
+#work {
+  padding: 2rem; }
+  #work .projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 4rem; }
+    #work .projects img {
+      width: 100%;
+      border: 3px #fff solid; }
+      #work .projects img:hover {
+        opacity: 0.5;
+        border-color: #eece1a;
+        transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
 
 #main-footer {
   padding: 1rem;
@@ -239,7 +274,9 @@ main {
       display: block;
       background-color: #333;
       width: 100%;
-      position: relative; } }
+      position: relative; }
+  #work {
+    text-align: center; } }
 
 .cf:before, .cf:after {
   content: "";
