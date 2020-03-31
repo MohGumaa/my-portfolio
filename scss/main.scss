@@ -1,15 +1,28 @@
 @import 'config';
 
-* { box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
     background: $primary-color;
     color: set-text-color($primary-color);
-    margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // font-size: 15px;
     line-height: 1.5;
 }
+
+a {
+  color: $text-color;
+  text-decoration:none;  
+}
+
+ul {
+  list-style: none;
+}
+
 
 h1,
 h2,
@@ -28,97 +41,112 @@ h3 {
     }
 }
 
-a {
-    color: $text-color;
-    text-decoration:none;  
-}
-
 .text-secondary{
     color: $secondary-color;
 }
+.menu-btn {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 30px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
 
-main {
-  @include background;
-  // min-height: calc(100vh - 6px);
-
-  /* Navigation Bar */
-  nav {
-    top: 0; // Fix the menu to the top
-    position: fixed; // Fix the menu to the top
-    // height: 40px;
+// Home Style
+#home {
+  // Nav 
+  .main-nav  {
+    top: 0;
+    position: fixed; 
+    height: 60px;
     width: 100%;
     background-color: rgba($menu-bg, 0.9);
     overflow: hidden;
     box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  
+    .container{
+      @include Container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      font-size: 1rem;
+    }
     
     ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      display: flex;
     }
 
-    li {
-      float: left;
-    }
-
-    a {
-      display: inline-block;
-      outline: none;
-      text-align: center;
-      padding: 1rem 0.8rem;
+    .main-menu {
+      li {
+        padding: 0 20px;
+      }
       
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      font-weight: 400;
-      @include easeOut();
+      a {
+        padding-bottom: 2px;
+      }
+
+      a:hover {
+        border-bottom: 2px solid #fff;
+      }
     }
 
-    // li:hover {
-    //   background-color: $menu-hover;
-    // }
-    
+    // right
+    .right-menu {
+      li {
+        padding: 0 10px;
+
+        b {
+          color: #DF292D;
+        }
+      }
+    }
+
     a:hover {
       color: $secondary-color;
+      @include easeOut;
+    }
+  }
+
+  // Showcase content
+  .showcase{
+    @include background;
+    padding: 4rem;
+    height: 95vh;
+    overflow: hidden;
+
+    .icons {
+      margin-top: 1rem;
+
+      a {
+        padding: 0.4rem;
+
+        &:hover {
+          color: $secondary-color;
+          @include easeOut;
+        }
+      }
     }
 
-    a#openup {
-      display: none;
+    h1 {
+      margin-top: 20vh;
     }
-  } 
-
-  // Main
-  #home {
-      padding: 4rem;
-      height: 100vh;
-      overflow: hidden;
-      
-      .icons {
-          margin-top: 1rem;
-
-          a {
-              padding: 0.4rem;
-
-              &:hover {
-                  color: $secondary-color;
-                  @include easeOut(); 
-              }
-          }
-      }
-
-      h1 {
-          margin-top: 20vh;
-      }
   }
 }
+
 // About section
 #about {
-  background-color: $color;
-  color: set-text-color($color);
+  background-color: $text-color;
+  color: set-text-color($text-color);
 
     /* Container */
   .container {
     @include Container;
-    
+    text-align: center;
+
     .lg-heading {
       display: inline-block;     
 
@@ -127,47 +155,58 @@ main {
         display: block;
         border-top: 6px solid #DF292D;
       }
-    }
-      .about-info {
-        display: grid;
-        grid-gap: 6rem;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 2rem;
-        
-        .bio-image {
-          width: 100%;
-          display: block;
-          margin: auto;
-          border-radius: 50%;
-          border: none;
+    } 
+    
+    // Info
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 6rem;
+      padding: 2rem;
+      
+      .bio-image {
+        width: 100%;
+        border-radius: 80%;
+      }
+
+      .bio {
+        margin-top: 2rem;
+        text-align: left;
+
+        p {
+          font-size: 1.3rem;
         }
 
-        .bio {
-          margin-top: 2rem;
-          text-align: justify;
+        a {
+          @include Button;
 
-          p {
-            font-size: 1.5rem;
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &:hover i {
+            margin-left: 10px;
           }
         }
       }
+    }
   }    
 }
 
-// Project/Style
+// Project Style
+#work{
 
-  #work{
-    padding: 2rem;
+  padding: 2rem;
 
-    .projects {
-      display: grid;
-      grid-gap: 0.7rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-top: 4rem;
+  .projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 4rem;
 
     img {
       width: 100%;
-      border: 3px $color solid;
+      border: 3px $text-color solid;
 
       &:hover {
         opacity: 0.5;
@@ -178,7 +217,7 @@ main {
   }
 }
 
-// Button Style
+// Button Style for project
 .btn {
   display: block;
   padding: 0.5rem 1rem;
@@ -203,6 +242,38 @@ main {
   color:#333;
 }
 
+// Contact Page
+#contact {
+  background-color: $text-color;
+  color: set-text-color($text-color);
+  padding: 2rem;
+
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+  
+    div {
+      font-size: 2rem;
+      border: 3px solid #fff;
+      padding: 1.5rem 2.5rem;
+      margin-bottom: 3rem;
+      @include easeOut;
+  
+      &:hover {
+        padding: 0.5rem 1.5rem;
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+        span {
+          color: set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+}
+
 // Main-Footer
 #main-footer {
   padding: 1rem;
@@ -212,10 +283,6 @@ main {
   height: 60px;
 }
 
-.cf:before, .cf:after { content:""; display:table; }
-.cf:after { clear:both; }
-.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
-
-// Media
+// // Media
 @import 'mobile';
 
