@@ -7,7 +7,8 @@ body {
   background: #444;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5; }
+  line-height: 1.5;
+  scroll-behavior: smooth; }
 
 a {
   color: #eee;
@@ -35,19 +36,9 @@ h3 {
 .text-secondary {
   color: #eece1a; }
 
-.menu-btn {
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 30px;
-  transform: translate(-50%, -50%);
-  display: none; }
-
 #home .main-nav {
   top: 0;
   position: fixed;
-  height: 60px;
   width: 100%;
   background-color: rgba(51, 51, 51, 0.9);
   overflow: hidden;
@@ -78,6 +69,9 @@ h3 {
   #home .main-nav a:hover {
     color: #eece1a;
     transition: all 0.6s ease-out; }
+
+#home .menu-small {
+  display: none; }
 
 #home .showcase {
   background: url(../img/background.jpg);
@@ -215,23 +209,45 @@ h3 {
   height: 60px; }
 
 @media screen and (max-width: 750px) {
-  .menu-btn {
-    display: block; }
-    .menu-btn:hover {
-      opacity: 0.8; }
   #home {
     align-items: center;
     text-align: center; }
-    #home .main-nav .main-menu {
+    #home .main-nav {
+      display: none; }
+    #home .menu-small {
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #444;
       width: 100%;
-      height: 50%; }
-    #home .main-nav .right-menu {
-      display: none; }
+      background: transparent;
+      height: 100%;
+      z-index: 2; }
+      #home .menu-small .main-small {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        transform: translateY(-1000px);
+        opacity: 0.9;
+        transition: transform 0.8s ease-in-out; }
+        #home .menu-small .main-small.show {
+          transform: translateY(0px); }
+        #home .menu-small .main-small li {
+          padding: 10px; }
+        #home .menu-small .main-small a {
+          font-size: 1.5rem; }
+          #home .menu-small .main-small a:hover {
+            color: #eece1a;
+            transition: all 0.6s ease-out; }
+      #home .menu-small .menu-btn {
+        cursor: pointer;
+        position: fixed;
+        z-index: 2;
+        top: 30px;
+        right: 30px; }
+        #home .menu-small .menu-btn:hover {
+          opacity: 0.8; }
   .lg-heading {
     line-height: 1;
     margin-bottom: 1rem; }
