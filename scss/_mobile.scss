@@ -5,35 +5,71 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
-    .menu-btn {
-        display: block;
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
     #home {
         align-items: center;
         text-align: center;
 
         .main-nav {
-            .main-menu {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: $primary-color;
-                width: 100%;
-                height: 50%;
-            }
-            
-            .right-menu {
-                display: none;
-            }
+            display: none;
         }
-        
+
+        // Small nav
+        .menu-small{
+            display: block;
+            position: absolute;
+            width: 100%;
+            background: transparent;
+            height: 100%;
+            z-index: 2;
+    
+            .main-small {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $menu-bg;
+            transform: translateY(-1000px);
+            opacity: 0.9;
+            transition: transform 0.8s ease-in-out;
+
+            &.show {
+                transform: translateY(0px);
+            }
+
+            li {
+                padding: 10px;
+            }
+
+            a {
+                font-size: 1.5rem;
+
+                &:hover {
+                    color: $secondary-color;
+                    @include easeOut;
+                }
+            }
+
+           
+            }
+
+            .menu-btn {
+                cursor: pointer;
+                position: fixed;
+                z-index: 2;
+                top: 30px;
+                right: 30px;
+          
+                &:hover {
+                  opacity: 0.8;
+                }
+                
+              }
+    
+        }
     }
     
+
     .lg-heading{
         line-height: 1;
         margin-bottom: 1rem;

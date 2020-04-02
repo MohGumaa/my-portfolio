@@ -12,6 +12,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     // font-size: 15px;
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -44,15 +45,6 @@ h3 {
 .text-secondary{
     color: $secondary-color;
 }
-.menu-btn {
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 30px;
-  transform: translate(-50%, -50%);
-  display: none;
-}
 
 // Home Style
 #home {
@@ -60,7 +52,6 @@ h3 {
   .main-nav  {
     top: 0;
     position: fixed; 
-    height: 60px;
     width: 100%;
     background-color: rgba($menu-bg, 0.9);
     overflow: hidden;
@@ -110,6 +101,11 @@ h3 {
       @include easeOut;
     }
   }
+
+  // Small menu
+  .menu-small {
+    display: none;
+  }  
 
   // Showcase content
   .showcase{
