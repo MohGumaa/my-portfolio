@@ -1,18 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap");
+.btn, #work .projects .btn-dark, #work .projects .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, #work .projects .btn-dark:hover, #work .projects .btn-light:hover {
+    background: #eece1a;
+    color: set-text-color(#eece1a); }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   background: #444;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.5;
-  scroll-behavior: smooth; }
+  line-height: 1.5; }
 
 a {
   color: #eee;
   text-decoration: none; }
+  a:hover {
+    color: #eece1a;
+    transition: all 0.6s ease-out; }
 
 ul {
   list-style: none; }
@@ -64,11 +79,6 @@ h3 {
     border-bottom: 2px solid #fff; }
   #home .main-nav .right-menu li {
     padding: 0 10px; }
-    #home .main-nav .right-menu li b {
-      color: #DF292D; }
-  #home .main-nav a:hover {
-    color: #eece1a;
-    transition: all 0.6s ease-out; }
 
 #home .menu-small {
   display: none; }
@@ -96,9 +106,6 @@ h3 {
     margin-top: 1rem; }
     #home .showcase .icons a {
       padding: 0.4rem; }
-      #home .showcase .icons a:hover {
-        color: #eece1a;
-        transition: all 0.6s ease-out; }
   #home .showcase h1 {
     margin-top: 20vh; }
 
@@ -122,29 +129,15 @@ h3 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 6rem;
-      padding: 2rem; }
+      padding: 1rem; }
       #about .container .about-info .bio-image {
-        width: 100%;
-        border-radius: 80%; }
+        width: 80%;
+        border-radius: 50%; }
       #about .container .about-info .bio {
-        margin-top: 2rem;
+        margin-top: 0.25rem;
         text-align: left; }
         #about .container .about-info .bio p {
-          font-size: 1.3rem; }
-        #about .container .about-info .bio a {
-          cursor: pointer;
-          display: inline-block;
-          border: 0;
-          font-weight: bold;
-          padding: 10px 20px;
-          background: #333;
-          color: #eee;
-          font-size: 15px;
-          margin-top: 1rem; }
-          #about .container .about-info .bio a:hover {
-            opacity: 0.8; }
-          #about .container .about-info .bio a:hover i {
-            margin-left: 10px; }
+          font-size: 1.2rem; }
 
 #work {
   padding: 2rem; }
@@ -160,23 +153,12 @@ h3 {
         opacity: 0.5;
         border-color: #eece1a;
         transition: all 0.6s ease-out; }
-
-.btn, .btn-dark, .btn-light {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #eece1a;
-    color: #000; }
-
-.btn-dark {
-  background: black;
-  color: #fff; }
-
-.btn-light {
-  background: #c4c4c4;
-  color: #333; }
+    #work .projects .btn-dark {
+      background: black;
+      color: #fff; }
+    #work .projects .btn-light {
+      background: #c4c4c4;
+      color: #333; }
 
 #contact {
   background-color: #eee;
@@ -190,8 +172,8 @@ h3 {
     margin-top: 1rem; }
     #contact .boxes div {
       font-size: 2rem;
-      border: 3px solid #fff;
-      padding: 1.5rem 2.5rem;
+      border: 3px solid #666;
+      padding: 1.5rem 2rem;
       margin-bottom: 3rem;
       transition: all 0.6s ease-out; }
       #contact .boxes div:hover {
@@ -207,11 +189,21 @@ h3 {
   background-color: #2b2b2b;
   color: #fff;
   height: 60px; }
+  #main-footer span {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 0.83rem;
+    line-height: 1.2;
+    letter-spacing: 0.0625rem !important;
+    text-transform: uppercase; }
 
 @media screen and (max-width: 750px) {
   #home {
     align-items: center;
     text-align: center; }
+    #home .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 3rem; }
     #home .main-nav {
       display: none; }
     #home .menu-small {
@@ -244,38 +236,34 @@ h3 {
         cursor: pointer;
         position: fixed;
         z-index: 2;
-        top: 30px;
-        right: 30px; }
+        top: 20px;
+        right: 20px;
+        border: 1px solid;
+        border-color: rgba(238, 238, 238, 0.3);
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.75rem; }
         #home .menu-small .menu-btn:hover {
           opacity: 0.8; }
-  .lg-heading {
-    line-height: 1;
-    margin-bottom: 1rem; }
   #about .container {
     max-width: 80%;
     padding: 0.5rem; }
     #about .container h1 {
-      font-size: 1.8rem; }
+      font-size: 2.5rem; }
     #about .container .about-info {
       grid-template-columns: 1fr;
-      padding: .5rem; }
-      #about .container .about-info .bio {
-        margin-top: 1px; }
+      padding: .5rem;
+      margin-bottom: 3rem; }
   #work {
-    text-align: center; }
-  #contact h1 {
-    font-size: 4rem; }
-  #contact .boxes div {
-    font-size: 1.5rem;
-    padding: 1rem;
-    width: 70%;
-    margin-bottom: 2rem; }
-    #contact .boxes div:hover {
-      padding: 0.3rem 1rem; } }
+    text-align: center; } }
 
 @media screen and (max-width: 480px) {
-  #home h1 {
-    font-size: 4rem;
+  #home h1.lg-heading, #home h2.lg-heading {
+    font-size: 2rem; }
+  #home h1.sm-heading, #home h2.sm-heading {
+    margin-bottom: 1rem;
+    padding: 0.2rem .5rem;
+    font-size: 1rem; }
+  #home .showcase h1 {
     margin-top: 10vh; }
   #contact h1 {
     font-size: 3rem; }
