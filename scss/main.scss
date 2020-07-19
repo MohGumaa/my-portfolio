@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
-@import 'config';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap");
+@import "config";
 
 * {
   box-sizing: border-box;
@@ -12,15 +12,15 @@ html {
 }
 
 body {
-    background: $primary-color;
-    color: set-text-color($primary-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
 a {
   color: $text-color;
-  text-decoration:none;  
+  text-decoration: none;
 
   &:hover {
     color: $secondary-color;
@@ -32,41 +32,40 @@ ul {
   list-style: none;
 }
 
-
 h1,
 h2,
 h3 {
-    margin: 0;
-    font-weight: 400;
+  margin: 0;
+  font-weight: 400;
 
-    &.lg-heading{
-        font-size: 6rem;
-    }
+  &.lg-heading {
+    font-size: 6rem;
+  }
 
-    &.sm-heading {
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
-    }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
 }
 
-.text-secondary{
-    color: $secondary-color;
+.text-secondary {
+  color: $secondary-color;
 }
 
 // Home Style
 #home {
-  // Nav 
-  .main-nav  {
+  // Nav
+  .main-nav {
     top: 0;
-    position: fixed; 
+    position: fixed;
     width: 100%;
     background-color: rgba($menu-bg, 0.9);
     overflow: hidden;
     box-shadow: 0px 8px 17px -8px rgba(0, 0, 0, 0.1);
     z-index: 2;
-  
-    .container{
+
+    .container {
       @include Container;
       display: flex;
       justify-content: space-between;
@@ -74,7 +73,7 @@ h3 {
       padding: 20px 0;
       font-size: 1rem;
     }
-    
+
     ul {
       display: flex;
     }
@@ -83,7 +82,7 @@ h3 {
       li {
         padding: 0 20px;
       }
-      
+
       a {
         padding-bottom: 2px;
       }
@@ -104,10 +103,10 @@ h3 {
   // Small menu
   .menu-small {
     display: none;
-  }  
+  }
 
   // Showcase content
-  .showcase{
+  .showcase {
     @include background;
     padding: 4rem;
     height: 95vh;
@@ -132,28 +131,28 @@ h3 {
   background-color: $text-color;
   color: set-text-color($text-color);
 
-    /* Container */
+  /* Container */
   .container {
     @include Container;
     text-align: center;
 
     .lg-heading {
-      display: inline-block;     
+      display: inline-block;
 
       :after {
-        content: '';
+        content: "";
         display: block;
-        border-top: 6px solid #DF292D;
+        border-top: 6px solid #df292d;
       }
-    } 
-    
+    }
+
     // Info
     .about-info {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 6rem;
       padding: 1rem;
-      
+
       .bio-image {
         width: 80%;
         border-radius: 50%;
@@ -168,11 +167,11 @@ h3 {
         }
       }
     }
-  }    
+  }
 }
 
 // Project Style
-#work{
+#work {
   padding: 2rem;
 
   .projects {
@@ -184,6 +183,7 @@ h3 {
     img {
       width: 100%;
       border: 3px $text-color solid;
+      height: 230px;
 
       &:hover {
         opacity: 0.5;
@@ -195,17 +195,16 @@ h3 {
     .btn-dark {
       @extend .btn;
       background: darken($primary-color, 50);
-      color:#fff;
+      color: #fff;
     }
-    
+
     .btn-light {
       @extend .btn;
       background: lighten($primary-color, 50);
-      color:#333;
+      color: #333;
     }
   }
 }
-
 
 // Contact Page
 #contact {
@@ -219,14 +218,14 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     margin-top: 1rem;
-  
+
     div {
       font-size: 2rem;
       border: 3px solid #666;
       padding: 1.5rem 2rem;
       margin-bottom: 3rem;
       @include easeOut;
-  
+
       &:hover {
         padding: 0.5rem 1.5rem;
         background: $secondary-color;
@@ -257,5 +256,4 @@ h3 {
 }
 
 // // Media
-@import 'mobile';
-
+@import "mobile";
