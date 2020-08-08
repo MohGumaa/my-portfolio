@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Welcome To My Portfolio</title>
 </head>
-<body>
+<body id="top-page">
   <!-- Home Section -->
   <header id="home">
     <!-- Nav on larger Screen-->
     <nav class="main-nav">
       <div class="container">
         <ul class="main-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">My Work</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="scroll">Home</a></li>
+          <li><a href="#about" class="scroll">About</a></li>
+          <li><a href="#work" class="scroll">My Work</a></li>
+          <li><a href="#contact" class="scroll">Contact</a></li>
         </ul>
 
-        <!-- <ul class="right-menu">
+        <ul class="right-menu">
           <li><b>My CV</b></li>
           <li>
-            <a href="#">
+            <a href="portfolio.html" target="_blank">
               <i class="fas fa-file-csv fa-2x"></i>
             </a>
           </li>
-        </ul> -->
+        </ul>
       </div>
     </nav>
 
@@ -37,10 +37,15 @@
         <i class="fas fa-bars fa-2x"></i>
       </div>
       <ul class="main-small">
-        <li><a class="page-show" href="#home">Home</a></li>
-        <li><a class="page-show" href="#about">About</a></li>
-        <li><a class="page-show" href="#work">My Work</a></li>
-        <li><a class="page-show" href="#contact">Contact</a></li>
+        <li><a class="page-show scroll" href="#home">Home</a></li>
+        <li><a class="page-show scroll" href="#about">About</a></li>
+        <li><a class="page-show scroll" href="#work">My Work</a></li>
+        <li><a class="page-show scroll" href="#contact">Contact</a></li>
+        <li>
+          <a href="portfolio.html" target="_blank">
+            My CV
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -178,6 +183,13 @@
     <span>&copy; 2020 Mohamed Gumaa. All rights reserved.</span>
   </footer>
 
-    <script src="js/main.js"></script>
+  <!-- Scroll Top -->
+  <a href="#top-page" class="scroll-to-top scroll">
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/scroll.js"></script>
+    </script>
 </body>
 </html>
