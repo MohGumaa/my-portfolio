@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap");
-.btn, #work .projects .btn-dark, #work .projects .btn-light {
+.btn, #about .container .about-info .btn-more, #work .projects .btn-dark, #work .projects .btn-light {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
-  .btn:hover, #work .projects .btn-dark:hover, #work .projects .btn-light:hover {
+  .btn:hover, #about .container .about-info .btn-more:hover, #work .projects .btn-dark:hover, #work .projects .btn-light:hover {
     background: #eece1a;
     color: set-text-color(#eece1a); }
 
@@ -138,6 +138,14 @@ h3 {
         text-align: left; }
         #about .container .about-info .bio p {
           font-size: 1.2rem; }
+      #about .container .about-info .more {
+        display: none; }
+      #about .container .about-info .btn-more {
+        background: #444;
+        color: #fff;
+        margin: 5px 0; }
+        #about .container .about-info .btn-more:hover {
+          background-color: rgba(73, 73, 73, 0.5); }
 
 #work {
   padding: 2rem; }

@@ -26,3 +26,7 @@ $(document).ready(function () {
     $(".main-small").toggleClass("show");
   });
 });
+
+$("#show").on("click", function () {
+  $("#show-more, #dot").toggleClass("more");
+});
