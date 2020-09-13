@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Welcome To My Portfolio</title>
 </head>
-<body id="top-page">
+<body>
   <!-- Home Section -->
   <header id="home">
     <!-- Nav on larger Screen-->
     <nav class="main-nav">
       <div class="container">
         <ul class="main-menu">
-          <li><a href="#home" class="scroll">Home</a></li>
-          <li><a href="#about" class="scroll">About</a></li>
-          <li><a href="#work" class="scroll">My Work</a></li>
-          <li><a href="#contact" class="scroll">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">My Work</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+
         <ul class="right-menu">
           <li><b>My CV</b></li>
           <li>
-            <a href="https://drive.google.com/file/d/1yCyXW6Y9n21PkYKX_zhK51CvSoJX8FZP/view?usp=sharing" target="_blank">
+            <a href="https://drive.google.com/file/d/1dgMuZVOM98QSUNFniXJp72_MmmFYGkGX/view?usp=sharing">
               <i class="fas fa-file-csv fa-2x"></i>
             </a>
           </li>
@@ -36,15 +37,10 @@
         <i class="fas fa-bars fa-2x"></i>
       </div>
       <ul class="main-small">
-        <li><a class="page-show scroll" href="#home">Home</a></li>
-        <li><a class="page-show scroll" href="#about">About</a></li>
-        <li><a class="page-show scroll" href="#work">My Work</a></li>
-        <li><a class="page-show scroll" href="#contact">Contact</a></li>
-        <li>
-          <a href="portfolio.html" target="_blank">
-            My CV
-          </a>
-        </li>
+        <li><a class="page-show" href="#home">Home</a></li>
+        <li><a class="page-show" href="#about">About</a></li>
+        <li><a class="page-show" href="#work">My Work</a></li>
+        <li><a class="page-show" href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -84,12 +80,11 @@
       <div class="about-info">
         <img src="./img/DSC_0698.JPG" alt="Mohamed Gumaa" class="bio-image">
         <div class="bio">
-          <h1 class="lg-heading">BIO</h1> 
-          <p id="sidebare">
-            I am a self taught web developer. I entered the world web developer  in my college. From the moment I built my first website. I know I was hooked into the world of software development. Software development changed my way I think about life.<span id="dots">...</span><span id="show-more" class="more">It's offered an engaging challenge to continually learning and improve my skills in creating quality programs. What started with a simple website has become a full-fledged passion that get more exciting as the years go by.<br><br>
-              <strong>⚙️Tech skills:</strong> HTML5, CSS3, SCSS, Bootstrap, JavaScript (DOM), Jquery, MySql, React Js, Learning REDUX and context api, Python, Flask, Django, Git and GitHub, Chrome Dev Tools, Basic of Photoshop.</span>
+          <h1 class="lg-heading">BIO</h1>
+          <p>
+            I started learning to code when I was 13 years old because I want to make my own games.
+            Over time, I have gained experience designing and developing  web application.
           </p>
-          <button class="btn-more" id="show">Read more</button>
           <!-- <a href="#">Read More <i class="fas fa-chevron-right"></i></a> -->
         </div>
       </div>
@@ -140,6 +135,17 @@
             <i class="fab fa-github"></i>Github
           </a>
         </div>
+        <div class="item">
+          <a href="#!">
+            <img src="./img/projects/project1.jpg" alt="project1">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye"></i>Project
+          </a>
+          <a href="https://github.com/MohGumaa/finance" class="btn-dark">
+            <i class="fab fa-github"></i>Github
+          </a>
+        </div>
       </div>
   </section>
 
@@ -172,13 +178,6 @@
     <span>&copy; 2020 Mohamed Gumaa. All rights reserved.</span>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#top-page" class="scroll-to-top scroll">
-    <i class="fa fa-angle-up"></i>
-  </a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/scroll.js"></script>
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
