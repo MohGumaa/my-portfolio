@@ -1,10 +1,12 @@
 // DeskTops & Laptops
 @include mediaLg {
+    
 
 }
 
 // Tablets & Small Laptops
 @include mediaMd {
+    
     #home {
         align-items: center;
         text-align: center;
@@ -100,6 +102,13 @@
     #work{
         text-align: center;
     }
+
+    #contact {
+    
+        .boxes {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 
 // Smartphones
@@ -130,9 +139,11 @@
             font-size: 3rem;
         }
         .boxes {
+            grid-template-columns: 1fr;
+            padding: 0 9rem;
             div {
                 font-size: 1.3rem;
-                width: 80%;
+                width: 100%;
             }
         }
     }
